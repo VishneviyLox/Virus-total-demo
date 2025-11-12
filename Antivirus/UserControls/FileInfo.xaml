@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="Antivirus.UserControls.FileInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Antivirus.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.ColumnSpan="2" Margin="0,0,0,40" Background="#2f3d5c">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <TextBlock HorizontalAlignment="Center" 
+                           Text="1/72 security vendor flagged this file as malicious"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           FontSize="12"
+                           TextWrapping="Wrap"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Button Content="Reanalyze" Background="#2f3d5c" VerticalAlignment="Stretch" Margin="60,0,60,0"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,-40,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Margin="0,0,-50,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <TextBlock FontFamily="Consolas" 
+                        Foreground="White"
+                         HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="12"
+                        TextWrapping="Wrap"
+                               Text="a56b03a34b0477a6d50595411aa6e08143dff268cb5093ce5d042af4d7d751ca"
+                               Margin="15,0,0,0"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <TextBlock FontFamily="Consolas" 
+                Foreground="White"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 FontSize="12"
+                 TextWrapping="Wrap"
+                 Text="GeForce Download Inst.exe"
+                 Margin="15,0,0,0"/>
+                </Grid>
+            </Grid>
+
+            <Grid Margin="50,0,0,0" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+            <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock FontFamily="Consolas" 
+        Foreground="White"
+         HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        FontSize="12"
+        TextWrapping="Wrap"
+               Text="Size"
+               Margin="15,0,0,0"/>
+                    <TextBlock FontFamily="Consolas" 
+                        Foreground="White"
+                         HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="12"
+                        TextWrapping="Wrap"
+                               Text="6.93 MB"
+                               Margin="15,0,0,0" Grid.Row="1"/>
+            </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock FontFamily="Consolas" 
+Foreground="White"
+ HorizontalAlignment="Center"
+VerticalAlignment="Center"
+FontSize="12"
+TextWrapping="Wrap"
+       Text="Last Analysis Date"
+       Margin="15,0,0,0"/>
+                    <TextBlock FontFamily="Consolas" 
+                Foreground="White"
+                 HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="12"
+                TextWrapping="Wrap"
+                       Text="3 days ago"
+                       Margin="15,0,0,0" Grid.Row="1"/>
+                </Grid>
+        </Grid>
+
+    </Grid>
+    </Grid>
+</UserControl>

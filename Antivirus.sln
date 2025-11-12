@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antivirus", "Antivirus\Antivirus.csproj", "{67AEDFB9-5C8F-4119-8394-03993860B99C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67AEDFB9-5C8F-4119-8394-03993860B99C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67AEDFB9-5C8F-4119-8394-03993860B99C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67AEDFB9-5C8F-4119-8394-03993860B99C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67AEDFB9-5C8F-4119-8394-03993860B99C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B14D3639-6F9C-408E-96F3-162806EDD4E7}
+	EndGlobalSection
+EndGlobal
