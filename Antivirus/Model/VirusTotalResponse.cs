@@ -1,6 +1,4 @@
-﻿
-
-namespace Antivirus.Model
+﻿namespace Antivirus.Model
 {
     public class VirusTotalResponse
     {

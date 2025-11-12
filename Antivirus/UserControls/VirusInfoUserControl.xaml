@@ -14,20 +14,30 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid>
-            <TextBlock Text="{Binding VirusName}"/>
+            <TextBlock Text="{Binding VirusName}"  FontFamily="Consolas" 
+  Foreground="White"
+  HorizontalAlignment="Center"
+  VerticalAlignment="Center"
+  FontSize="12"
+  TextWrapping="Wrap"/>
         </Grid>
 
-        <Grid>
-            <TextBlock Text="{Binding VirusType}"/>
+        <Grid Grid.Column="1">
+            <TextBlock Text="{Binding VirusType}"  FontFamily="Consolas" 
+  Foreground="White"
+  HorizontalAlignment="Center"
+  VerticalAlignment="Center"
+  FontSize="12"
+  TextWrapping="Wrap"/>
         </Grid>
 
-        <Grid>
-            <TextBlock Text="{Binding AntivirusName}"/>
-        </Grid>
-
-        <Grid>
-            <Button Command="{Binding TestClickCommand}" Content="TEST"/>
-            <TextBlock Text="{Binding IsVirus}"/>
+        <Grid Grid.Column="2">
+            <TextBlock Text="{Binding AntivirusName}"  FontFamily="Consolas" 
+  Foreground="White"
+  HorizontalAlignment="Center"
+  VerticalAlignment="Center"
+  FontSize="12"
+  TextWrapping="Wrap"/>
         </Grid>
     </Grid>
 </UserControl>

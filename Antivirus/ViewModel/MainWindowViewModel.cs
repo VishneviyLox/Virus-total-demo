@@ -2,6 +2,7 @@
 using Antivirus.View;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,20 @@ namespace Antivirus.ViewModel
 
         #region Methods
         [RelayCommand]
-        public void GetFileInfo()
+        public async Task GetFileInfo()
         {
-            WindowService.Instance.Show<FileAllInfoView, FileAllInfoViewModel>();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Выберите файл для сканирования";
+
+            bool? result = openFileDialog.ShowDialog();
+
+            if (result == true)
+            {
+                string filePath = openFileDialog.FileName;
+                var fileInfoViewModel = new FileAllInfoViewModel();
+                await fileInfoViewModel.LoadFileAnalysisAsync(filePath);
+                WindowService.Instance.Show<FileAllInfoView, FileAllInfoViewModel>(fileInfoViewModel);
+            }
         }
         #endregion
     }

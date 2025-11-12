@@ -1,8 +1,13 @@
-﻿namespace Antivirus.Model
+﻿// Файл: Antivirus.Model/Attributes.cs
+using System.Collections.Generic;
+
+namespace Antivirus.Model
 {
     public class Attributes
     {
         public LastAnalysisStats last_analysis_stats { get; set; }
+        public Dictionary<string, AnalysisResult> last_analysis_results { get; set; }
+
         public string md5 { get; set; }
         public string sha1 { get; set; }
         public string sha256 { get; set; }
