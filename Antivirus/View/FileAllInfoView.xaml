@@ -16,7 +16,7 @@
         <Grid VerticalAlignment="Top">
             <uc:FileInfo/>
         </Grid>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="0,-180,0,0">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
 
                 <ItemsControl ItemsSource="{Binding VirusDetections}">

@@ -6,38 +6,40 @@
              xmlns:local="clr-namespace:Antivirus.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+    <Border BorderBrush="#3d4a69" BorderThickness="1">
         <Grid>
-            <TextBlock Text="{Binding VirusName}"  FontFamily="Consolas" 
-  Foreground="White"
-  HorizontalAlignment="Center"
-  VerticalAlignment="Center"
-  FontSize="12"
-  TextWrapping="Wrap"/>
-        </Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <TextBlock Text="{Binding VirusName}" Margin="10"  FontFamily="Consolas" 
+Foreground="White"
+HorizontalAlignment="Center"
+VerticalAlignment="Center"
+FontSize="12"
+TextWrapping="Wrap"/>
+            </Grid>
 
-        <Grid Grid.Column="1">
-            <TextBlock Text="{Binding VirusType}"  FontFamily="Consolas" 
-  Foreground="White"
-  HorizontalAlignment="Center"
-  VerticalAlignment="Center"
-  FontSize="12"
-  TextWrapping="Wrap"/>
-        </Grid>
+            <Grid Grid.Column="1">
+                <TextBlock Text="{Binding VirusType}" Margin="10"  FontFamily="Consolas" 
+Foreground="White"
+HorizontalAlignment="Center"
+VerticalAlignment="Center"
+FontSize="12"
+TextWrapping="Wrap"/>
+            </Grid>
 
-        <Grid Grid.Column="2">
-            <TextBlock Text="{Binding AntivirusName}"  FontFamily="Consolas" 
-  Foreground="White"
-  HorizontalAlignment="Center"
-  VerticalAlignment="Center"
-  FontSize="12"
-  TextWrapping="Wrap"/>
+            <Grid Grid.Column="2">
+                <TextBlock Text="{Binding AntivirusName}" Margin="10" FontFamily="Consolas" 
+Foreground="White"
+HorizontalAlignment="Center"
+VerticalAlignment="Center"
+FontSize="12"
+TextWrapping="Wrap"/>
+            </Grid>
         </Grid>
-    </Grid>
+    </Border>
+
 </UserControl>
