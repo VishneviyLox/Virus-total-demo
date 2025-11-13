@@ -1,7 +1,4 @@
-﻿// Файл: Antivirus.Model/Attributes.cs
-using System.Collections.Generic;
-
-namespace Antivirus.Model
+﻿namespace Antivirus.Model
 {
     public class Attributes
     {

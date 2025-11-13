@@ -1,5 +1,4 @@
-﻿
-namespace Antivirus.Model
+﻿namespace Antivirus.Model
 {
     public class Data
     {

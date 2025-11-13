@@ -1,7 +1,4 @@
-﻿using Antivirus.UserControls;
-using Antivirus.ViewModel;
-using CommunityToolkit.Mvvm.ComponentModel;
-using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 

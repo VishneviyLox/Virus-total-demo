@@ -30,7 +30,11 @@
                            TextWrapping="Wrap"/>
             </Grid>
             <Grid Grid.Column="1">
-                <Button Content="Reanalyze" Background="#2f3d5c" VerticalAlignment="Stretch" Margin="60,0,60,0"/>
+                <Button Content="Reanalyze" 
+                        Background="#2f3d5c" 
+                        VerticalAlignment="Stretch" 
+                        Margin="60,0,60,0" 
+                        Click="RestartClick"/>
             </Grid>
         </Grid>
 
@@ -49,53 +53,53 @@
                 <Grid>
                     <TextBlock FontFamily="Consolas" 
                         Foreground="White"
-                         HorizontalAlignment="Left"
+                        HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         FontSize="12"
                         TextWrapping="Wrap"
-                               Text="a56b03a34b0477a6d50595411aa6e08143dff268cb5093ce5d042af4d7d751ca"
-                               Margin="15,0,0,0"/>
+                        Text="{Binding FileHash}"
+                        Margin="15,0,0,0"/>
                 </Grid>
                 <Grid Grid.Row="1">
                     <TextBlock FontFamily="Consolas" 
-                Foreground="White"
-                 HorizontalAlignment="Left"
-                 VerticalAlignment="Top"
-                 FontSize="12"
-                 TextWrapping="Wrap"
-                 Text="GeForce Download Inst.exe"
-                 Margin="15,0,0,0"/>
+                        Foreground="White"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontSize="12"
+                        TextWrapping="Wrap"
+                        Text="{Binding NameFile}"
+                        Margin="15,0,0,0"/>
                 </Grid>
             </Grid>
 
             <Grid Margin="50,0,0,0" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-            <Grid>
+                <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBlock FontFamily="Consolas" 
-        Foreground="White"
-         HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        FontSize="12"
-        TextWrapping="Wrap"
-               Text="Size"
-               Margin="15,0,0,0"/>
-                    <TextBlock FontFamily="Consolas" 
                         Foreground="White"
-                         HorizontalAlignment="Center"
+                        HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         FontSize="12"
                         TextWrapping="Wrap"
-                               Text="6.93 MB"
-                               Margin="15,0,0,0" Grid.Row="1"/>
-            </Grid>
+                        Text="Size"
+                        Margin="15,0,0,0"/>
+                    <TextBlock FontFamily="Consolas" 
+                        Foreground="White"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="12"
+                        TextWrapping="Wrap"
+                        Text="{Binding SizeFile}"
+                        Margin="15,0,0,0" Grid.Row="1"/>
+                </Grid>
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -103,24 +107,24 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock FontFamily="Consolas" 
-Foreground="White"
- HorizontalAlignment="Center"
-VerticalAlignment="Center"
-FontSize="12"
-TextWrapping="Wrap"
-       Text="Last Analysis Date"
-       Margin="15,0,0,0"/>
+                        Foreground="White"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="12"
+                        TextWrapping="Wrap"
+                        Text="Last Analysis Date"
+                        Margin="15,0,0,0"/>
                     <TextBlock FontFamily="Consolas" 
-                Foreground="White"
-                 HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontSize="12"
-                TextWrapping="Wrap"
-                       Text="3 days ago"
-                       Margin="15,0,0,0" Grid.Row="1"/>
+                        Foreground="White"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="12"
+                        TextWrapping="Wrap"
+                        Text="3 days ago"
+                        Margin="15,0,0,0" Grid.Row="1"/>
                 </Grid>
-        </Grid>
+            </Grid>
 
-    </Grid>
+        </Grid>
     </Grid>
 </UserControl>

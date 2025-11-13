@@ -1,28 +1,30 @@
-﻿
+﻿using Antivirus.Model;
+using Newtonsoft.Json;
 using System.IO;
 using System.Net.Http;
 using System.Security.Cryptography;
-using Antivirus.Model;
-using Newtonsoft.Json;
 
 namespace Antivirus.Services
 {
     internal class VirusTotalService
     {
         string ApiKey = "b6490a52053b60fb7cb93651b35d9f5acfe0cad52d3592cc1d843c024860cc7f";
-
-        public async Task<Dictionary<string, AnalysisResult>> GetAnalysisResults(string filePath)
+        public async Task<(Dictionary<string, AnalysisResult> Analysis, FileData FileDetails, string FileHash)> GetAnalysisResults(string filePath)
         {
+            var fileDataTuple = GetFileData(filePath);
+            var fileDetails = new FileData
+            {
+                NameFile = fileDataTuple.fileName,
+                SizeFile = fileDataTuple.sizeFile
+            };
+
             string fileHash;
-            // 1. Расчет хеша файла
             using (var sha256 = SHA256.Create())
             using (var fileStream = File.OpenRead(filePath))
             {
                 byte[] hashBytes = sha256.ComputeHash(fileStream);
                 fileHash = BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
             }
-
-            // 2. Вызов API
             using (var httpClient = new HttpClient())
             {
                 httpClient.DefaultRequestHeaders.Add("x-apikey", ApiKey);
@@ -31,19 +33,24 @@ namespace Antivirus.Services
                 if (response.IsSuccessStatusCode)
                 {
                     string jsonResponse = await response.Content.ReadAsStringAsync();
-
-                    // 3. Десериализация в полную модель VirusTotalResponse
                     var fullResponse = JsonConvert.DeserializeObject<VirusTotalResponse>(jsonResponse);
-
-                    // 4. Проверка и возврат детальных результатов
                     if (fullResponse?.data?.attributes?.last_analysis_results != null)
                     {
-                        return fullResponse.data.attributes.last_analysis_results;
+                        return (fullResponse.data.attributes.last_analysis_results, fileDetails, fileHash);
                     }
                 }
 
                 throw new HttpRequestException($"Ошибка API VirusTotal: {response.StatusCode}");
             }
+        }
+
+        private (string fileName, string sizeFile) GetFileData(string filePath)
+        {
+            System.IO.FileInfo fileInfo = new System.IO.FileInfo(filePath);
+            string fileName = Path.GetFileName(filePath);
+            double sizeFileMB = fileInfo.Length / (1024.0 * 1024.0);
+            string sizeFileFormatted = $"{sizeFileMB:F2} MB";
+            return (fileName, sizeFileFormatted);
         }
     }
 }

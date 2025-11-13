@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Antivirus.Services;
+using Antivirus.View;
+using Antivirus.ViewModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Antivirus.UserControls
 {
@@ -23,6 +14,11 @@ namespace Antivirus.UserControls
         public FileInfo()
         {
             InitializeComponent();
+        }
+
+        void RestartClick(object obj, RoutedEventArgs e)
+        {
+            WindowService.Instance.Show<MainWindowView, MainWindowViewModel>();
         }
     }
 }
